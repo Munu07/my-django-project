@@ -1,0 +1,51 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Masterclass</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="back-link">&larr;</a>
+            <h1 id="section-title">Loading Section...</h1>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Topics</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <!-- Topics will be loaded here by script.js -->
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section class="info-box">
+                <h3>Welcome</h3>
+                <p>Select a topic from the sidebar to begin learning.</p>
+            </section>
+        </main>
+    </div>
+
+    
+<script src="{% static 'js/script.js' %}">
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            // Support both 'id' (from index.html) and 'section' (convention consistency)
+            const sectionId = params.get('id') || params.get('section');
+            if (sectionId) {
+                loadSection(sectionId);
+            }
+        });
+    </script>
+</body>
+</html>

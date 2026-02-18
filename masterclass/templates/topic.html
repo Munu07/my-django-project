@@ -1,0 +1,97 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Masterclass</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+     <!-- Prism.js for Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="back-link">&larr;</a>
+            <h1 id="topic-title">Loading Topic...</h1>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Topics</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <!-- Topics will be loaded here -->
+                </ul>
+            </nav>
+        </aside>
+
+     <main class="main-content">
+
+    <section class="info-box">
+        <h3>Concept Explanation</h3>
+        <p id="explanation-text"></p>
+    </section>
+
+    <section class="info-box">
+        <h3>Syntax</h3>
+        <pre><code id="syntax-code" class="language-java"></code></pre>
+    </section>
+
+    <section class="info-box">
+        <h3>Example Program</h3>
+        <pre><code id="example-code" class="language-java"></code></pre>
+    </section>
+
+    <section class="info-box">
+        <h3>Logic Breakdown</h3>
+        <p id="logic-text"></p>
+    </section>
+
+    <section class="info-box">
+        <h3>Mini Exercises</h3>
+        <ul id="exercises-list"></ul>
+    </section>
+
+    <!-- NEW: Java Practice IDE Section -->
+    <section class="info-box ide-section">
+        <h3>Practice: Write Your Java Program</h3>
+
+        <select id="practice-selector"></select>
+
+        <textarea id="java-editor" placeholder="Write your Java code here..."></textarea>
+
+        <div class="ide-buttons">
+            <button onclick="runJavaProgram()">Run Program</button>
+            <button onclick="showStepExecution()">Show Step Execution</button>
+        </div>
+
+        <h4>Output:</h4>
+        <pre id="program-output"></pre>
+
+        <h4>Step-by-Step Execution:</h4>
+        <div id="step-output"></div>
+    </section>
+
+</main>
+
+
+   <script src="/static/js/script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const section = params.get("section");
+        const topic = params.get("topic");
+        if (section && topic && typeof loadTopicContent === "function") {
+            loadTopicContent(section, topic);
+        }
+    });
+</script>
+
+</body>
+</html>

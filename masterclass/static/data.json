@@ -1,0 +1,637 @@
+
+{
+  "sections": [
+    {
+      "id": "fundamentals",
+      "title": "Java Fundamentals",
+      "description": "Master the basics of Java programming language including syntax, data types, and control flow.",
+      "topics": [
+        {
+          "id": "tokens",
+          "title": "Java Tokens",
+          "explanation": "Java tokens are the smallest individual building blocks of code. They include Keywords, Identifiers, Literals, Operators, and Separators.",
+          "syntax": "keyword identifier = literal;",
+          "example": "int age = 25;\n// int is a keyword\n// age is an identifier\n// 25 is a literal",
+          "logic": "Compiler breaks code into tokens during lexical analysis.",
+          "exercises": ["Identify tokens in: public static void main(String[] args)", "List 5 Java keywords."]
+        },
+        {
+          "id": "variables",
+          "title": "Variables",
+          "explanation": "Variables are containers for storing data values.",
+          "syntax": "type variableName = value;",
+          "example": "int myNum = 15;\nString name = \"John\";",
+          "logic": "1. Declare the type.\n2. Assign a name.\n3. Assign a value.",
+          "exercises": [
+            "Declare an integer variable named age and assign it 25.",
+            "Create a String variable named city with value 'New York'."
+          ]
+        },
+        {
+          "id": "datatypes",
+          "title": "Data Types",
+          "explanation": "Java has two categories of data types: Primitive (int, float, char, boolean, etc.) and Non-Primitive (String, Arrays, Classes).",
+          "syntax": "int x = 5;\nfloat y = 5.99f;",
+          "example": "int myNum = 5;               // Integer (whole number)\nfloat myFloatNum = 5.99f;    // Floating point number\nchar myLetter = 'D';         // Character\nboolean myBool = true;       // Boolean\nString myText = \"Hello\";     // String",
+          "logic": "Data types specify the size and type of values that can be stored.",
+          "exercises": ["Define a float variable.", "What is the size of int?"]
+        },
+        {
+          "id": "operators",
+          "title": "Operators",
+          "explanation": "Operators are used to perform operations on variables and values (Arithmetic, Assignment, Comparison, Logical, Bitwise).",
+          "syntax": "variable1 operator variable2",
+          "example": "int sum = 100 + 50;\nif (sum > 100) { ... }",
+          "logic": "Operators have precedence rules determining the order of evaluation.",
+          "exercises": ["Calculate 10 % 3.", "Explain the difference between == and =."]
+        },
+        {
+          "id": "control_statements",
+          "title": "Control Statements",
+          "explanation": "Control statements control the flow of execution of the program (Loops: for, while, do-while; Branching: break, continue).",
+          "syntax": "for (int i = 0; i < 5; i++) { ... }",
+          "example": "for(int i=1; i<=5; i++){\n  System.out.println(i);\n}",
+          "logic": "Loops repeat a block of code while a condition is true.",
+          "exercises": ["Write a loop to print 1 to 10.", "Use break in a loop."]
+        },
+        {
+          "id": "conditional_statements",
+          "title": "Conditional Statements",
+          "explanation": "Conditional statements execute different blocks of code based on conditions (if, if-else, switch).",
+          "syntax": "if (condition) { ... } else { ... }",
+          "example": "if (time < 18) {\n  System.out.println(\"Good day.\");\n} else {\n  System.out.println(\"Good evening.\");\n}",
+          "logic": "Evaluates a boolean expression to decide execution path.",
+          "exercises": ["Check if a number is positive or negative.", "Write a switch case for days of the week."]
+        },
+        {
+          "id": "methods",
+          "title": "Methods",
+          "explanation": "A method is a block of code which only runs when it is called. Methods are used to perform certain actions.",
+          "syntax": "returnType methodName(parameters) { ... }",
+          "example": "static void myMethod() {\n  System.out.println(\"I just got executed!\");\n}",
+          "logic": "Code reusability and modularity.",
+          "exercises": ["Create a method to add two numbers.", "Call a method from main."]
+        },
+        {
+          "id": "static_vs_nonstatic",
+          "title": "Static vs Non-Static",
+          "explanation": "Static members belong to the class, while non-static members belong to a specific instance of the class.",
+          "syntax": "static int x; vs int y;",
+          "example": "class Test {\n  static int a = 10;\n  int b = 20;\n}",
+          "logic": "Static memory is allocated once; Non-static memory is allocated per object.",
+          "exercises": ["Access a static variable.", "Create an object to access non-static variable."]
+        },
+        {
+          "id": "class_object",
+          "title": "Class and Object",
+          "explanation": "A Class is a blueprint for creating objects. An Object is an instance of a class.",
+          "syntax": "ClassName obj = new ClassName();",
+          "example": "class Car {\n  String color = \"red\";\n}\npublic class Main {\n  public static void main(String[] args) {\n    Car myCar = new Car();\n    System.out.println(myCar.color);\n  }\n}",
+          "logic": "Classes define attributes and behaviors; Objects implement them.",
+          "exercises": ["Create a class 'Student'.", "Instantiate 'Student' object."]
+        },
+        {
+          "id": "constructor",
+          "title": "Constructor",
+          "explanation": "A special method used to initialize objects. It is called when an object of a class is created.",
+          "syntax": "public ClassName() { ... }",
+          "example": "public class Main {\n  int x;\n  public Main() {\n    x = 5;\n  }\n}",
+          "logic": "Constructors have the same name as the class and no return type.",
+          "exercises": ["Create a default constructor.", "Create a parameterized constructor."]
+        },
+        {
+          "id": "this_keyword",
+          "title": "this Keyword",
+          "explanation": "'this' is a reference variable that refers to the current object.",
+          "syntax": "this.variableName",
+          "example": "public class Main {\n  int x;\n  public Main(int x) {\n    this.x = x;\n  }\n}",
+          "logic": "Resolves ambiguity between instance variables and parameters.",
+          "exercises": ["Use 'this' to call another constructor.", "Use 'this' to refer to instance variable."]
+        },
+        {
+          "id": "access_specifiers",
+          "title": "Access Specifiers",
+          "explanation": "Keywords that set the accessibility of classes, methods, and other members (public, private, protected, default).",
+          "syntax": "private int x;",
+          "example": "public class MyClass {\n  private int x = 10;\n}",
+          "logic": "Encapsulation and data hiding.",
+          "exercises": ["Demonstrate private access.", "Demonstrate public access."]
+        },
+        {
+          "id": "package",
+          "title": "Package",
+          "explanation": "A package is a group of related classes, interfaces, and sub-packages.",
+          "syntax": "package mypack;",
+          "example": "package mypack;\nclass MyPackageClass {\n  public static void main(String[] args) {\n    System.out.println(\"This is my package!\");\n  }\n}",
+          "logic": "Organizes files and prevents naming conflicts.",
+          "exercises": ["Create a user-defined package.", "Import java.util package."]
+        },
+        {
+          "id": "object_class",
+          "title": "Object Class",
+          "explanation": "The Object class is the root of the class hierarchy. Every class has Object as a superclass.",
+          "syntax": "class MyClass extends Object { ... }",
+          "example": "MyClass obj = new MyClass();\nSystem.out.println(obj.toString());",
+          "logic": "Provides common methods like toString(), equals(), hashCode().",
+          "exercises": ["Override toString() method.", "Use equals() method."]
+        },
+        {
+          "id": "string_class",
+          "title": "String Class",
+          "explanation": "String is a sequence of characters. In Java, String is an object that represents a sequence of char values.",
+          "syntax": "String s = \"Hello\";",
+          "example": "String s1 = \"java\";\nchar ch[] = {'s','t','r','i','n','g'};\nString s2 = new String(ch);",
+          "logic": "Strings are immutable in Java.",
+          "exercises": ["Create a string using literal.", "Create a string using new keyword."]
+        },
+        {
+          "id": "string_functions",
+          "title": "String Functions",
+          "explanation": "Common methods available in String class for manipulation.",
+          "syntax": "str.methodName()",
+          "example": "String txt = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\nSystem.out.println(\"The length of the txt string is: \" + txt.length());",
+          "logic": "Perform operations like searching, splitting, comparing.",
+          "exercises": ["Find length of a string.", "Convert string to uppercase."]
+        }
+      ]
+    },
+    {
+      "id": "logic",
+      "title": "Programming Logic Practice",
+      "description": "Develop algorithmic thinking with 20 distinct programs per topic. Each topic includes logic breakdown, animation, and solution.",
+      "topics": [
+        {
+          "id": "factorial",
+          "title": "Factorial",
+          "programs": [
+            {
+              "id": 1,
+              "title": "Factorial of a Number (Iterative)",
+              "statement": "Write a program to calculate the factorial of a given number using a for loop.",
+              "input": "5",
+              "output": "120",
+              "sampleCode": "class Factorial {\n    public static void main(String args[]) {\n        int i, fact = 1;\n        int number = 5;\n        for (i = 1; i <= number; i++) {\n            fact = fact * i;\n        }\n        System.out.println(\"Factorial of \" + number + \" is: \" + fact);\n    }\n}",
+              "logicSteps": ["Initialize fact = 1", "Loop from 1 to number", "Multiply fact by current index", "Print result"],
+              "animationType": "factorial"
+            },
+            {
+              "id": 2,
+              "title": "Factorial using Recursion",
+              "statement": "Calculate factorial using a recursive method.",
+              "input": "4",
+              "output": "24",
+              "sampleCode": "class FactorialRec {\n static int factorial(int n){\n  if (n == 0)\n    return 1;\n  else\n    return(n * factorial(n-1));\n }\n public static void main(String args[]){\n  int number = 4;\n  System.out.println(\"Factorial: \"+factorial(number));\n }\n}",
+              "logicSteps": ["Base case: if n is 0, return 1", "Recursive case: n * factorial(n-1)"],
+              "animationType": "factorial"
+            },
+            {"id":3, "title": "Factorial of Large Number (BigInteger)", "statement": "Calculate factorial for large numbers where int/long is insufficient.", "input": "20", "output": "...", "sampleCode": "//...", "logicSteps": ["Use BigInteger class"], "animationType": "none"},
+            {"id":4, "title": "Sum of Factorials of Digits", "statement": "Find if sum of factorials of digits equals the number (Strong Number).", "input": "145", "output": "Yes", "sampleCode": "//...", "logicSteps": ["Extract digits", "Calc factorial of each", "Sum them", "Compare"], "animationType": "none"},
+            {"id":5, "title": "Trailing Zeros in Factorial", "statement": "Count number of trailing zeros in n!", "input": "100", "output": "24", "sampleCode": "//...", "logicSteps": ["Count factors of 5"], "animationType": "none"},
+            {"id":6, "title": "Factorial Logic 6", "statement": "Placeholder 6", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":7, "title": "Factorial Logic 7", "statement": "Placeholder 7", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":8, "title": "Factorial Logic 8", "statement": "Placeholder 8", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":9, "title": "Factorial Logic 9", "statement": "Placeholder 9", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":10, "title": "Factorial Logic 10", "statement": "Placeholder 10", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":11, "title": "Factorial Logic 11", "statement": "Placeholder 11", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":12, "title": "Factorial Logic 12", "statement": "Placeholder 12", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":13, "title": "Factorial Logic 13", "statement": "Placeholder 13", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":14, "title": "Factorial Logic 14", "statement": "Placeholder 14", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":15, "title": "Factorial Logic 15", "statement": "Placeholder 15", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":16, "title": "Factorial Logic 16", "statement": "Placeholder 16", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":17, "title": "Factorial Logic 17", "statement": "Placeholder 17", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":18, "title": "Factorial Logic 18", "statement": "Placeholder 18", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":19, "title": "Factorial Logic 19", "statement": "Placeholder 19", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":20, "title": "Factorial Logic 20", "statement": "Placeholder 20", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"}
+          ]
+        },
+        {
+          "id": "fibonacci",
+          "title": "Fibonacci Series",
+          "programs": [
+            {
+              "id": 1,
+              "title": "Fibonacci Series up to N terms",
+              "statement": "Print the Fibonacci series up to N terms using iteration.",
+              "input": "10",
+              "output": "0 1 1 2 3 5 8 13 21 34",
+              "sampleCode": "class FibonacciExample1{\npublic static void main(String args[])\n{\n int n1=0,n2=1,n3,i,count=10;\n System.out.print(n1+\" \"+n2);\n\n for(i=2;i<count;++i)\n {\n  n3=n1+n2;\n  System.out.print(\" \"+n3);\n  n1=n2;\n  n2=n3;\n }\n}}",
+              "logicSteps": ["Init n1=0, n2=1", "Print n1, n2", "Loop", "n3 = n1 + n2", "Print n3", "Shift: n1=n2, n2=n3"],
+              "animationType": "fibonacci"
+            },
+            {
+              "id": 2,
+              "title": "Fibonacci Series using Recursion",
+              "statement": "Print Fibonacci series using recursion.",
+              "input": "10",
+              "output": "0 1 1 2 3 5 8 13 21 34",
+              "sampleCode": "class FibonacciRecursion { ... }",
+              "logicSteps": ["Recursive function calls itself"],
+              "animationType": "fibonacci"
+            },
+             {"id":3, "title": "Nth Fibonacci Number", "statement": "Find the Nth number in Fibonacci series.", "input": "6", "output": "8", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+             {"id":4, "title": "Check if Number is Fibonacci", "statement": "Check if a given number belongs to Fibonacci series.", "input": "8", "output": "Yes", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+             {"id":5, "title": "Fibonacci Logic 5", "statement": "Placeholder 5", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+             {"id":6, "title": "Fibonacci Logic 6", "statement": "Placeholder 6", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+             {"id":7, "title": "Fibonacci Logic 7", "statement": "Placeholder 7", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+             {"id":8, "title": "Fibonacci Logic 8", "statement": "Placeholder 8", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+             {"id":9, "title": "Fibonacci Logic 9", "statement": "Placeholder 9", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+             {"id":10, "title": "Fibonacci Logic 10", "statement": "Placeholder 10", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+             {"id":11, "title": "Fibonacci Logic 11", "statement": "Placeholder 11", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+             {"id":12, "title": "Fibonacci Logic 12", "statement": "Placeholder 12", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+             {"id":13, "title": "Fibonacci Logic 13", "statement": "Placeholder 13", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+             {"id":14, "title": "Fibonacci Logic 14", "statement": "Placeholder 14", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+             {"id":15, "title": "Fibonacci Logic 15", "statement": "Placeholder 15", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+             {"id":16, "title": "Fibonacci Logic 16", "statement": "Placeholder 16", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+             {"id":17, "title": "Fibonacci Logic 17", "statement": "Placeholder 17", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+             {"id":18, "title": "Fibonacci Logic 18", "statement": "Placeholder 18", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+             {"id":19, "title": "Fibonacci Logic 19", "statement": "Placeholder 19", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+             {"id":20, "title": "Fibonacci Logic 20", "statement": "Placeholder 20", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"}
+          ]
+        },
+        {
+          "id": "prime",
+          "title": "Prime Number",
+          "programs": [
+            {"id": 1, "title": "Check Prime Number", "statement": "Check if a number is prime.", "input": "17", "output": "Prime", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+            {"id": 2, "title": "Primes between 1 to N", "statement": "Print all primes up to N.", "input": "10", "output": "2 3 5 7", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+            {"id": 3, "title": "Nth Prime Number", "statement": "Find the Nth prime.", "input": "5", "output": "11", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+            {"id":4, "title": "Prime Logic 4", "statement": "Placeholder 4", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":5, "title": "Prime Logic 5", "statement": "Placeholder 5", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":6, "title": "Prime Logic 6", "statement": "Placeholder 6", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":7, "title": "Prime Logic 7", "statement": "Placeholder 7", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":8, "title": "Prime Logic 8", "statement": "Placeholder 8", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":9, "title": "Prime Logic 9", "statement": "Placeholder 9", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":10, "title": "Prime Logic 10", "statement": "Placeholder 10", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":11, "title": "Prime Logic 11", "statement": "Placeholder 11", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":12, "title": "Prime Logic 12", "statement": "Placeholder 12", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":13, "title": "Prime Logic 13", "statement": "Placeholder 13", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":14, "title": "Prime Logic 14", "statement": "Placeholder 14", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":15, "title": "Prime Logic 15", "statement": "Placeholder 15", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":16, "title": "Prime Logic 16", "statement": "Placeholder 16", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":17, "title": "Prime Logic 17", "statement": "Placeholder 17", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":18, "title": "Prime Logic 18", "statement": "Placeholder 18", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":19, "title": "Prime Logic 19", "statement": "Placeholder 19", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":20, "title": "Prime Logic 20", "statement": "Placeholder 20", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"}
+          ]
+        },
+        {
+          "id": "palindrome",
+          "title": "Palindrome",
+          "programs": [
+            {"id": 1, "title": "Check Palindrome Number", "statement": "Check if number is palindrome.", "input": "121", "output": "Yes", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+            {"id": 2, "title": "Check Palindrome String", "statement": "Check if string is palindrome.", "input": "madam", "output": "Yes", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+            {"id":3, "title": "Palindrome Logic 3", "statement": "Placeholder 3", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":4, "title": "Palindrome Logic 4", "statement": "Placeholder 4", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":5, "title": "Palindrome Logic 5", "statement": "Placeholder 5", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":6, "title": "Palindrome Logic 6", "statement": "Placeholder 6", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":7, "title": "Palindrome Logic 7", "statement": "Placeholder 7", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":8, "title": "Palindrome Logic 8", "statement": "Placeholder 8", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":9, "title": "Palindrome Logic 9", "statement": "Placeholder 9", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":10, "title": "Palindrome Logic 10", "statement": "Placeholder 10", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":11, "title": "Palindrome Logic 11", "statement": "Placeholder 11", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":12, "title": "Palindrome Logic 12", "statement": "Placeholder 12", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":13, "title": "Palindrome Logic 13", "statement": "Placeholder 13", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":14, "title": "Palindrome Logic 14", "statement": "Placeholder 14", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":15, "title": "Palindrome Logic 15", "statement": "Placeholder 15", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":16, "title": "Palindrome Logic 16", "statement": "Placeholder 16", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":17, "title": "Palindrome Logic 17", "statement": "Placeholder 17", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":18, "title": "Palindrome Logic 18", "statement": "Placeholder 18", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":19, "title": "Palindrome Logic 19", "statement": "Placeholder 19", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":20, "title": "Palindrome Logic 20", "statement": "Placeholder 20", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"}
+          ]
+        },
+        {
+          "id": "reverse",
+          "title": "Reverse String",
+          "programs": [
+            {"id": 1, "title": "Reverse String using Loop", "statement": "Reverse a string character by character.", "input": "hello", "output": "olleh", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+            {"id": 2, "title": "Reverse String using StringBuilder", "statement": "Use built-in methods.", "input": "java", "output": "avaj", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+             {"id":3, "title": "Reverse Logic 3", "statement": "Placeholder 3", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":4, "title": "Reverse Logic 4", "statement": "Placeholder 4", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":5, "title": "Reverse Logic 5", "statement": "Placeholder 5", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":6, "title": "Reverse Logic 6", "statement": "Placeholder 6", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":7, "title": "Reverse Logic 7", "statement": "Placeholder 7", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":8, "title": "Reverse Logic 8", "statement": "Placeholder 8", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":9, "title": "Reverse Logic 9", "statement": "Placeholder 9", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":10, "title": "Reverse Logic 10", "statement": "Placeholder 10", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":11, "title": "Reverse Logic 11", "statement": "Placeholder 11", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":12, "title": "Reverse Logic 12", "statement": "Placeholder 12", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":13, "title": "Reverse Logic 13", "statement": "Placeholder 13", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":14, "title": "Reverse Logic 14", "statement": "Placeholder 14", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":15, "title": "Reverse Logic 15", "statement": "Placeholder 15", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":16, "title": "Reverse Logic 16", "statement": "Placeholder 16", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":17, "title": "Reverse Logic 17", "statement": "Placeholder 17", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":18, "title": "Reverse Logic 18", "statement": "Placeholder 18", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":19, "title": "Reverse Logic 19", "statement": "Placeholder 19", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":20, "title": "Reverse Logic 20", "statement": "Placeholder 20", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"}
+          ]
+        },
+        {
+          "id": "oddeven",
+          "title": "Odd-Even",
+          "programs": [
+            {"id": 1, "title": "Check Odd/Even", "statement": "Check if number is odd or even.", "input": "4", "output": "Even", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+            {"id": 2, "title": "Odd/Even without Modulo", "statement": "Check odd/even without % operator.", "input": "5", "output": "Odd", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+             {"id":3, "title": "OddEven Logic 3", "statement": "Placeholder 3", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":4, "title": "OddEven Logic 4", "statement": "Placeholder 4", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":5, "title": "OddEven Logic 5", "statement": "Placeholder 5", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":6, "title": "OddEven Logic 6", "statement": "Placeholder 6", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":7, "title": "OddEven Logic 7", "statement": "Placeholder 7", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":8, "title": "OddEven Logic 8", "statement": "Placeholder 8", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":9, "title": "OddEven Logic 9", "statement": "Placeholder 9", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":10, "title": "OddEven Logic 10", "statement": "Placeholder 10", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":11, "title": "OddEven Logic 11", "statement": "Placeholder 11", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":12, "title": "OddEven Logic 12", "statement": "Placeholder 12", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":13, "title": "OddEven Logic 13", "statement": "Placeholder 13", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":14, "title": "OddEven Logic 14", "statement": "Placeholder 14", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":15, "title": "OddEven Logic 15", "statement": "Placeholder 15", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":16, "title": "OddEven Logic 16", "statement": "Placeholder 16", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":17, "title": "OddEven Logic 17", "statement": "Placeholder 17", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":18, "title": "OddEven Logic 18", "statement": "Placeholder 18", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":19, "title": "OddEven Logic 19", "statement": "Placeholder 19", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":20, "title": "OddEven Logic 20", "statement": "Placeholder 20", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"}
+          ]
+        },
+        {
+          "id": "patterns",
+          "title": "Pattern Programs",
+          "programs": [
+            {"id": 1, "title": "Right Triangle Star Pattern", "statement": "Print a right triangle of stars.", "input": "5", "output": "*\n**\n", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+            {"id": 2, "title": "Pyramid Pattern", "statement": "Print a full pyramid.", "input": "5", "output": "  *  \n  ", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+             {"id":3, "title": "Pattern Logic 3", "statement": "Placeholder 3", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":4, "title": "Pattern Logic 4", "statement": "Placeholder 4", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":5, "title": "Pattern Logic 5", "statement": "Placeholder 5", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":6, "title": "Pattern Logic 6", "statement": "Placeholder 6", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":7, "title": "Pattern Logic 7", "statement": "Placeholder 7", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":8, "title": "Pattern Logic 8", "statement": "Placeholder 8", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":9, "title": "Pattern Logic 9", "statement": "Placeholder 9", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":10, "title": "Pattern Logic 10", "statement": "Placeholder 10", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":11, "title": "Pattern Logic 11", "statement": "Placeholder 11", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":12, "title": "Pattern Logic 12", "statement": "Placeholder 12", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":13, "title": "Pattern Logic 13", "statement": "Placeholder 13", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":14, "title": "Pattern Logic 14", "statement": "Placeholder 14", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":15, "title": "Pattern Logic 15", "statement": "Placeholder 15", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":16, "title": "Pattern Logic 16", "statement": "Placeholder 16", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":17, "title": "Pattern Logic 17", "statement": "Placeholder 17", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":18, "title": "Pattern Logic 18", "statement": "Placeholder 18", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":19, "title": "Pattern Logic 19", "statement": "Placeholder 19", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":20, "title": "Pattern Logic 20", "statement": "Placeholder 20", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"}
+          ]
+        },
+        {
+          "id": "bubble_sort",
+          "title": "Bubble Sort",
+          "programs": [
+            {"id": 1, "title": "Bubble Sort Implementation", "statement": "Sort an array using Bubble Sort algorithm.", "input": "5 1 4 2 8", "output": "1 2 4 5 8", "sampleCode": "//...", "logicSteps": [], "animationType": "bubblesort"},
+            {"id": 2, "title": "Optimized Bubble Sort", "statement": "Stop if no swaps in a pass.", "input": "1 2 3 4 5", "output": "1 2 3 4 5", "sampleCode": "//...", "logicSteps": [], "animationType": "bubblesort"},
+             {"id":3, "title": "Bubble Logic 3", "statement": "Placeholder 3", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":4, "title": "Bubble Logic 4", "statement": "Placeholder 4", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":5, "title": "Bubble Logic 5", "statement": "Placeholder 5", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":6, "title": "Bubble Logic 6", "statement": "Placeholder 6", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":7, "title": "Bubble Logic 7", "statement": "Placeholder 7", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":8, "title": "Bubble Logic 8", "statement": "Placeholder 8", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":9, "title": "Bubble Logic 9", "statement": "Placeholder 9", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":10, "title": "Bubble Logic 10", "statement": "Placeholder 10", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":11, "title": "Bubble Logic 11", "statement": "Placeholder 11", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":12, "title": "Bubble Logic 12", "statement": "Placeholder 12", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":13, "title": "Bubble Logic 13", "statement": "Placeholder 13", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":14, "title": "Bubble Logic 14", "statement": "Placeholder 14", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":15, "title": "Bubble Logic 15", "statement": "Placeholder 15", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":16, "title": "Bubble Logic 16", "statement": "Placeholder 16", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":17, "title": "Bubble Logic 17", "statement": "Placeholder 17", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":18, "title": "Bubble Logic 18", "statement": "Placeholder 18", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":19, "title": "Bubble Logic 19", "statement": "Placeholder 19", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":20, "title": "Bubble Logic 20", "statement": "Placeholder 20", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"}
+          ]
+        },
+        {
+          "id": "arrays",
+          "title": "Arrays",
+          "programs": [
+            {"id": 1, "title": "Sum of Array Elements", "statement": "Calculate sum of all elements.", "input": "1 2 3", "output": "6", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+            {"id": 2, "title": "Largest Element in Array", "statement": "Find max value.", "input": "10 50 20", "output": "50", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+             {"id":3, "title": "Array Logic 3", "statement": "Placeholder 3", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":4, "title": "Array Logic 4", "statement": "Placeholder 4", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":5, "title": "Array Logic 5", "statement": "Placeholder 5", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":6, "title": "Array Logic 6", "statement": "Placeholder 6", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":7, "title": "Array Logic 7", "statement": "Placeholder 7", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":8, "title": "Array Logic 8", "statement": "Placeholder 8", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":9, "title": "Array Logic 9", "statement": "Placeholder 9", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":10, "title": "Array Logic 10", "statement": "Placeholder 10", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":11, "title": "Array Logic 11", "statement": "Placeholder 11", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":12, "title": "Array Logic 12", "statement": "Placeholder 12", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":13, "title": "Array Logic 13", "statement": "Placeholder 13", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":14, "title": "Array Logic 14", "statement": "Placeholder 14", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":15, "title": "Array Logic 15", "statement": "Placeholder 15", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":16, "title": "Array Logic 16", "statement": "Placeholder 16", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":17, "title": "Array Logic 17", "statement": "Placeholder 17", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":18, "title": "Array Logic 18", "statement": "Placeholder 18", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":19, "title": "Array Logic 19", "statement": "Placeholder 19", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":20, "title": "Array Logic 20", "statement": "Placeholder 20", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"}
+          ]
+        },
+        {
+          "id": "pass_value",
+          "title": "Pass by Value",
+          "programs": [
+            {"id": 1, "title": "Pass Primitive Type", "statement": "Demonstrate that changing parameter doesn't affect original.", "input": "x=10", "output": "x=10", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+            {"id": 2, "title": "Pass Object Reference", "statement": "Demonstrate changing object field affects original.", "input": "obj.val=10", "output": "obj.val=20", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+             {"id":3, "title": "Pass Value Logic 3", "statement": "Placeholder 3", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":4, "title": "Pass Value Logic 4", "statement": "Placeholder 4", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":5, "title": "Pass Value Logic 5", "statement": "Placeholder 5", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":6, "title": "Pass Value Logic 6", "statement": "Placeholder 6", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":7, "title": "Pass Value Logic 7", "statement": "Placeholder 7", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":8, "title": "Pass Value Logic 8", "statement": "Placeholder 8", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":9, "title": "Pass Value Logic 9", "statement": "Placeholder 9", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":10, "title": "Pass Value Logic 10", "statement": "Placeholder 10", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":11, "title": "Pass Value Logic 11", "statement": "Placeholder 11", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":12, "title": "Pass Value Logic 12", "statement": "Placeholder 12", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":13, "title": "Pass Value Logic 13", "statement": "Placeholder 13", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":14, "title": "Pass Value Logic 14", "statement": "Placeholder 14", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":15, "title": "Pass Value Logic 15", "statement": "Placeholder 15", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":16, "title": "Pass Value Logic 16", "statement": "Placeholder 16", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":17, "title": "Pass Value Logic 17", "statement": "Placeholder 17", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":18, "title": "Pass Value Logic 18", "statement": "Placeholder 18", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":19, "title": "Pass Value Logic 19", "statement": "Placeholder 19", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":20, "title": "Pass Value Logic 20", "statement": "Placeholder 20", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"}
+          ]
+        },
+        {
+          "id": "pass_reference",
+          "title": "Pass by Reference",
+          "programs": [
+             {"id": 1, "title": "Understanding Reference", "statement": "Java technically only has Pass by Value. Demonstrate this.", "input": "-", "output": "-", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+             {"id": 2, "title": "Swapping Objects", "statement": "Try swapping two objects in a method.", "input": "-", "output": "-", "sampleCode": "//...", "logicSteps": [], "animationType": "none"},
+             {"id":3, "title": "Pass Ref Logic 3", "statement": "Placeholder 3", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":4, "title": "Pass Ref Logic 4", "statement": "Placeholder 4", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":5, "title": "Pass Ref Logic 5", "statement": "Placeholder 5", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":6, "title": "Pass Ref Logic 6", "statement": "Placeholder 6", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":7, "title": "Pass Ref Logic 7", "statement": "Placeholder 7", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":8, "title": "Pass Ref Logic 8", "statement": "Placeholder 8", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":9, "title": "Pass Ref Logic 9", "statement": "Placeholder 9", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":10, "title": "Pass Ref Logic 10", "statement": "Placeholder 10", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":11, "title": "Pass Ref Logic 11", "statement": "Placeholder 11", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":12, "title": "Pass Ref Logic 12", "statement": "Placeholder 12", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":13, "title": "Pass Ref Logic 13", "statement": "Placeholder 13", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":14, "title": "Pass Ref Logic 14", "statement": "Placeholder 14", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":15, "title": "Pass Ref Logic 15", "statement": "Placeholder 15", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":16, "title": "Pass Ref Logic 16", "statement": "Placeholder 16", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":17, "title": "Pass Ref Logic 17", "statement": "Placeholder 17", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":18, "title": "Pass Ref Logic 18", "statement": "Placeholder 18", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":19, "title": "Pass Ref Logic 19", "statement": "Placeholder 19", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"},
+            {"id":20, "title": "Pass Ref Logic 20", "statement": "Placeholder 20", "input": "-", "output": "-", "sampleCode": "", "logicSteps": [], "animationType": "none"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oop",
+      "title": "OOP Concepts",
+      "description": "Understand Object Oriented Programming concepts (Inheritance, Polymorphism, Abstraction, Encapsulation).",
+      "topics": [
+        {
+          "id": "inheritance",
+          "title": "Inheritance",
+          "explanation": "Mechanism where one class acquires properties of another class.",
+          "diagram": "Parent (Super Class) -> Child (Sub Class)",
+          "example": "class Animal {\n  void eat() { System.out.println(\"eating...\"); }\n}\nclass Dog extends Animal {\n  void bark() { System.out.println(\"barking...\"); }\n}",
+          "logic": "Use 'extends' keyword. Supports code reusability.",
+          "exercises": ["Create a Single Inheritance example.", "Create a Multilevel Inheritance example."]
+        },
+        {
+          "id": "overloading",
+          "title": "Method Overloading",
+          "explanation": "Multiple methods with same name but different parameters.",
+          "diagram": "add(int, int) | add(int, int, int)",
+          "example": "class Adder {\n  static int add(int a, int b) { return a+b; }\n  static int add(int a, int b, int c) { return a+b+c; }\n}",
+          "logic": "Compile-time polymorphism.",
+          "exercises": ["Overload a method to add integers and doubles."]
+        },
+        {
+          "id": "overriding",
+          "title": "Method Overriding",
+          "explanation": "Subclass provides specific implementation of a method declared in superclass.",
+          "diagram": "Parent.run() -> Child.run()",
+          "example": "class Vehicle { void run(){...} }\nclass Bike extends Vehicle { void run(){...} }",
+          "logic": "Runtime polymorphism. Rules: same name, same params, IS-A relationship.",
+          "exercises": ["Override toString() method.", "Demonstrate dynamic dispatch."]
+        },
+        {
+          "id": "polymorphism",
+          "title": "Polymorphism",
+          "explanation": "Ability to take multiple forms. Two types: Compile-time (Overloading) and Runtime (Overriding).",
+          "diagram": "Shape -> Draw() (Circle, Square)",
+          "example": "Shape s = new Circle();\ns.draw();",
+          "logic": "Allows treating objects of different classes through a common interface.",
+          "exercises": ["Create a Shape interface and implement in Circle/Rect."]
+        },
+        {
+          "id": "typecasting",
+          "title": "Typecasting",
+          "explanation": "Converting one data type to another (Upcasting / Downcasting).",
+          "diagram": "int -> double (widening)",
+          "example": "double d = 9.78;\nint i = (int) d; // Manual casting",
+          "logic": "Widening is automatic; Narrowing requires manual cast.",
+          "exercises": ["Cast double to int.", "Cast object to subclass (downcasting)."]
+        },
+        {
+          "id": "abstraction",
+          "title": "Abstraction",
+          "explanation": "Hiding internal details and showing only functionality.",
+          "diagram": "Abstract Class / Interface",
+          "example": "abstract class Bike {\n  abstract void run();\n}",
+          "logic": "Achieved using abstract classes and interfaces.",
+          "exercises": ["Create an abstract class with one abstract method."]
+        },
+        {
+          "id": "abstract_class",
+          "title": "Abstract Class",
+          "explanation": "A class that cannot be instantiated and may contain abstract methods.",
+          "diagram": "Class with 'abstract' keyword",
+          "example": "abstract class Base { ... }",
+          "logic": "Can have constructors and static methods also.",
+          "exercises": ["Can we instantiate an abstract class?", "Extend abstract class."]
+        },
+        {
+          "id": "interface",
+          "title": "Interface",
+          "explanation": "A blueprint of a class having static constants and abstract methods.",
+          "diagram": "implements InterfaceName",
+          "example": "interface Printable {\n void print();\n}",
+          "logic": "Supports multiple inheritance.",
+          "exercises": ["Implement two interfaces in one class."]
+        },
+        {
+          "id": "encapsulation",
+          "title": "Encapsulation",
+          "explanation": "Wrapping code and data together into a single unit.",
+          "diagram": "Class Box (private data + public methods)",
+          "example": "class Student {\n private String name;\n public String getName() { return name; }\n}",
+          "logic": "Data hiding using private variables and public getters/setters.",
+          "exercises": ["Create a JavaBeans class."]
+        },
+        {
+          "id": "composition",
+          "title": "Composition",
+          "explanation": "Design technique to implement has-a relationship.",
+          "diagram": "Car has-a Engine",
+          "example": "class Car {\n Engine e;\n}",
+          "logic": "Stronger relationship than Aggregation.",
+          "exercises": ["Create a Library class having Books."]
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "title": "Advanced Java",
+      "description": "Deep dive into advanced Java topics like Exception Handling, Collections, and Threads.",
+      "topics": [
+        {
+          "id": "exception_handling",
+          "title": "Exception Handling",
+          "explanation": "Mechanism to handle runtime errors.",
+          "diagram": "Try -> Catch -> Finally",
+          "example": "try {\n int data=50/0;\n} catch(ArithmeticException e) {\n System.out.println(e);\n}",
+          "logic": "Maintains normal flow of application.",
+          "exercises": ["Handle ArithmeticException.", "Use finally block."]
+        },
+        {
+          "id": "collections",
+          "title": "Collections",
+          "explanation": "Framework to store and manipulate group of objects.",
+          "diagram": "Collection Hierarchy (List, Set, Queue)",
+          "example": "ArrayList<String> list = new ArrayList<String>();\nlist.add(\"Ravi\");",
+          "logic": "Provides standard data structures.",
+          "exercises": ["Create an ArrayList.", "Iterate using Iterator."]
+        },
+        {
+          "id": "maps",
+          "title": "Maps",
+          "explanation": "Object that maps keys to values.",
+          "diagram": "Key -> Value",
+          "example": "HashMap<Integer,String> map = new HashMap<>();\nmap.put(1, \"Mango\");",
+          "logic": "No duplicate keys allowed.",
+          "exercises": ["Store country-capital pairs.", "Iterate over map keys."]
+        },
+        {
+          "id": "file_handling",
+          "title": "File Handling",
+          "explanation": "Reading and writing to files.",
+          "diagram": "Stream (Input/Output)",
+          "example": "File myObj = new File(\"filename.txt\");",
+          "logic": "Uses classes like FileWriter, FileReader.",
+          "exercises": ["Create a text file.", "Write string to file."]
+        },
+        {
+          "id": "threads",
+          "title": "Threads",
+          "explanation": "Smallest unit of processing. Multi-threading allows concurrent execution.",
+          "diagram": "Thread Life Cycle",
+          "example": "class MyThread extends Thread { ... }",
+          "logic": "Extends Thread class or implements Runnable interface.",
+          "exercises": ["Create a thread by extending Thread.", "Create a thread using Runnable."]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,414 @@
+
+:root {
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+  --sidebar-width: 280px;
+  --card-bg: #ffffff;
+  --accent-color: #e9ecef;
+  --border-color: #dee2e6;
+  --code-bg: #282c34;
+  --code-text: #abb2bf;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Global Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Header */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+header a.back-link {
+  color: white;
+  text-decoration: none;
+  margin-right: 1.5rem;
+  font-size: 1.2rem;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Main Layout */
+.wrapper {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  width: var(--sidebar-width);
+  background: white;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebar-header {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-header h3 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 0;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+
+.sidebar-nav li a {
+  display: block;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  border-left: 4px solid transparent;
+}
+
+.sidebar-nav li a:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.sidebar-nav li a.active {
+  background-color: #e7f1ff;
+  color: var(--primary-color);
+  border-left-color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Content Area */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+  background: white;
+}
+
+/* Cards (Homepage) */
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.card {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+  border-color: var(--primary-color);
+}
+
+.card h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Components */
+.info-box {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 5px solid var(--primary-color);
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.info-box h3 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.code-block {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 1.2rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Practice UI */
+.practice-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.problem-info {
+  background: #f1f8ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #c8e1ff;
+}
+
+.ide-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.ide-textarea {
+  width: 100%;
+  height: 300px;
+  font-family: 'Consolas', monospace;
+  padding: 1rem;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  resize: vertical;
+  outline: none;
+}
+
+.ide-toolbar {
+  background: #333;
+  padding: 0.8rem;
+  display: flex;
+  gap: 1rem;
+  border-radius: 0 0 8px 8px;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-primary { background: var(--primary-color); color: white; }
+.btn-primary:hover { background: var(--primary-hover); }
+
+.btn-secondary { background: #4a4a4a; color: white; }
+.btn-secondary:hover { background: #5a5a5a; }
+
+/* Animation Panel */
+.animation-panel {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #fafafa;
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  min-height: 300px;
+  display: none;
+  position: relative;
+}
+
+.animation-panel.active {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* Animation Elements */
+.anim-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    min-height: 100px;
+}
+
+.anim-box {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.array-container {
+    display: flex;
+    gap: 5px;
+    align-items: flex-end;
+    height: 150px;
+    padding: 10px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.array-box {
+    width: 40px;
+    background: var(--secondary-color);
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 5px;
+    border-radius: 4px 4px 0 0;
+    transition: all 0.4s ease;
+    font-size: 0.8rem;
+}
+
+.array-box.highlight {
+    background: #ffc107;
+    transform: scale(1.1);
+}
+
+.array-box.swapping {
+    background: #dc3545;
+}
+
+.anim-step-desc {
+    text-align: center;
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+/* ===============================
+   IDE SECTION STYLING
+================================= */
+
+.ide-section {
+    margin-top: 30px;
+}
+
+#practice-selector {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#java-editor {
+    width: 100%;
+    height: 220px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+.ide-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.ide-buttons button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.ide-buttons button:hover {
+    background-color: #0056b3;
+}
+
+#program-output {
+    background-color: #000;
+    color: #00ff00;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 60px;
+    white-space: pre-wrap;
+}
+
+#step-output {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-family: monospace;
+}
+
+#step-output div {
+    padding: 4px 0;
+    border-bottom: 1px solid #ddd;
+}

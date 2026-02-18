@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Masterclass</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+     <!-- Prism.js for Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="back-link">&larr;</a>
+            <h1 id="topic-title">Programming Logic</h1>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Programs</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <!-- Programs will be loaded here -->
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="practice-container">
+                <div class="problem-info">
+                    <h2 id="prog-title">Select a program</h2>
+                    <p id="prog-statement" style="margin: 10px 0; color: #555;"></p>
+                    <div style="font-size: 0.9rem; color: #666;">
+                        <strong>Sample Input:</strong> <span id="prog-input">-</span> | 
+                        <strong>Sample Output:</strong> <span id="prog-output">-</span>
+                    </div>
+                </div>
+
+                <div class="ide-container">
+                    <textarea class="ide-textarea" placeholder="// Write your logic or code here..."></textarea>
+                    <div class="ide-toolbar">
+                        <button class="btn btn-secondary" onclick="showLogic()">Show Logic</button>
+                        <button class="btn btn-secondary" onclick="showSolution()">Show Solution</button>
+                        <button class="btn btn-primary" onclick="showAnimation()">Show Animation</button>
+                    </div>
+                </div>
+
+                <div id="logic-box" class="info-box" style="display: none;"></div>
+                
+                <div id="solution-box" class="info-box" style="display: none;">
+                    <h3>Sample Solution</h3>
+                    <pre><code id="solution-code" class="language-java"></code></pre>
+                </div>
+
+                <div id="animation-panel" class="animation-panel">
+                    <div id="animation-content"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const sectionId = params.get('section');
+            const topicId = params.get('topic');
+            if (sectionId && topicId) {
+                populateSidebar(sectionId, topicId, 'programs');
+            }
+        });
+    </script>
+</body>
+</html>
