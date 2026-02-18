@@ -9,6 +9,6 @@
 Python manage.py makemigrations,
 Python manage.py migrate,
 python manage.py runserver 880 .
-![Homepage](masterclass/images/screenshot1.png)
-![Dashboard](masterclass/images/screenshot2.png)![Section](masterclass/images/.png)
-![Topic](masterclass/images/.png)
+![Homepage](masterclass/images/1.png)
+![Dashboard](masterclass/images/2.png)![Section](masterclass/images/3.png)
+![Topic](masterclass/images/4.png)
