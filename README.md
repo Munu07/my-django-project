@@ -5,7 +5,7 @@
 * It is bult through HTML,CSS,JAVA Script and Pyhton (Django)
 * It is complete Prompt Engineering Project Which is Build Through the Chat Gpt
 * Steps to Rub the Project
- Cd masterclass
-Python manage.py makemigrations
-Python manage.py migrate
-python manage.py runserver 880 
+ Cd masterclass,
+Python manage.py makemigrations,
+Python manage.py migrate,
+python manage.py runserver 880 .
